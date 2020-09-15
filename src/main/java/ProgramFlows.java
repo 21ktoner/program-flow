@@ -2,36 +2,43 @@ public class ProgramFlows {
     //during execution the Java Virtual Machine (JVM)
     //will always look for a main method to executes
     //from top to bottom
+public static void main(String[] args) {
+//print statement to get things started
+    System.out.println("first line of code in main");
 
-        //print statement to get things started
+    //if code reaches a statement, which causes
+    //it to leave the main method
+    //  (another method or class called)
+    //java will go execute ALL code in the method
+    //once finished it will return to the point
+    //in the main method where it left
+    int sum = add(7,5);
 
-
-        //if code reaches a statement, which causes
-        //it to leave the main method
-        //  (another method or class called)
-        //java will go execute ALL code in the method
-        //once finished it will return to the point
-        //in the main method where it left
-
-
-        //print statement showing return
-        //print statement showing results
-
-
-        //sometimes a method call may have
-        //the program travel to other methods
-        //but it will eventually return to
-        //the main to finish execution
-        //there are special cases
-        //   errors occur
-        //   specifically having the program quit
+    //print statement showing return
+    //print statement showing results
+    System.out.println("Returned back to main");
+    System.out.println("sum of numbers" + sum);
 
 
-        //print statement from final return
-        //print statement for results
+    //sometimes a method call may have
+    //the program travel to other methods
+    //but it will eventually return to
+    //the main to finish execution
+    //there are special cases
+    //   errors occur
+    //   specifically having the program quit
+    String lyrics = songLyric("Ways to Go");
+
+    //print statement from final return
+    //print statement for results
+    System.out.println("We are back in main again");
+    System.out.println("Song lyrics are" + lyrics);
 
 
-        //final print statement
+    //final print statement
+    System.out.println("Last line in main... ");
+}//end of main
+
 
 
     public static String songLyric (String songTitle) {
@@ -42,9 +49,9 @@ public class ProgramFlows {
         //then return to this method at this location
         //   WE ALWAYS WILL RETURN TO WHERE WE WERE CALLED
         //and move on
+        String artists = whoSings(songTitle);
 
-
-        System.out.printf("%55s", "TYPE SOME STUFF HERE");
+        System.out.printf("%55s", "Returned from whoSings with artist\n");
 
         return artists + " sings " + songTitle + "\n" +
                 "I've got a little bit longer, I got a ways to go";
